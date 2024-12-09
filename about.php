@@ -2,4 +2,6 @@
 
 $heading = "About Us";
 
+require("./functions.php");
+
 require("./views/about.views.php");
