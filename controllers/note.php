@@ -11,6 +11,12 @@ $query = "select * from notes where id = :id";
 
 $post_id = $_GET["id"];
 
-$note = $db->query($query, ['id' => $post_id])->fetch();
+$curr_user_id = 1;
+
+$note = $db->query($query, ['id' => $post_id])->find_or_fail();
+
+// dd($note);
+
+authorize($note["user_id"] === $curr_user_id, Response::FORBIDDEN);
 
 require "views/note.views.php";
