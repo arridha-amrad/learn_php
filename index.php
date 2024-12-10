@@ -6,12 +6,11 @@ require "Database.php";
 
 $config = require "config.php";
 
+$id = $_GET['id'];
+
 $db = new Database($config["database"]);
-$posts = $db->query("select * from posts")->fetchAll();
-$post = $db->query("select * from posts where id = 1")->fetch();
+$query = "select * from posts where id = :id";
 
-dd($post['title']);
+$post = $db->query($query, ['id' => $id])->fetch();
 
-foreach ($posts as $post) {
-    echo "<li>{$post['title']}</li>";
-}
+dd($post);
