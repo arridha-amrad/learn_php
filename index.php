@@ -1,17 +1,14 @@
 <?php
 
 require "functions.php";
+require "Database.php";
 // require "router.php";
 
-// connect to mysql db
-$dsn = "mysql:host=127.0.0.1;port=3306;dbname=learn_php;user=root;charset=utf8mb4";
-// dsn = data source name
+$db = new Database();
+$posts = $db->query("select * from posts")->fetchAll(PDO::FETCH_ASSOC);
+$post = $db->query("select * from posts where id = 1")->fetch(PDO::FETCH_ASSOC);
 
-$pdo = new PDO($dsn);
-
-$statement = $pdo->prepare('select * from posts');
-$statement->execute();
-$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+// dd($post['title']);
 
 foreach ($posts as $post) {
     echo "<li>{$post['title']}</li>";
