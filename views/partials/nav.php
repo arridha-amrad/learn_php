@@ -10,6 +10,7 @@
             <a href="/" class="<?= url_is('/') ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium  hover:bg-gray-700 hover:text-white">Home</a>
             <a href="/about" class="<?= url_is('/about') ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
             <a href="/contact" class="<?= url_is('/contact') ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+            <a href="/notes" class="<?= url_is('/notes') ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Notes</a>
           </div>
         </div>
       </div>
