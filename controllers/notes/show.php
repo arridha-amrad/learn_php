@@ -17,4 +17,4 @@ $note = $db->query($query, ['id' => $post_id])->find_or_fail();
 
 authorize($note["user_id"] === $curr_user_id, Response::FORBIDDEN);
 
-require "views/note.views.php";
+require "views/notes/show.views.php";

@@ -1,7 +1,7 @@
 <?php
-require "partials/head.php";
-require "partials/nav.php";
-require "partials/banner.php";
+require "views/partials/head.php";
+require "views/partials/nav.php";
+require "views/partials/banner.php";
 ?>
 
 <main>
@@ -14,9 +14,9 @@ require "partials/banner.php";
 			</li>
 		<?php endforeach; ?>
 		<div class="py-4">
-			<a class="text-blue-500 underline" href="/note/create">Create note</a>
+			<a class="text-blue-500 underline" href="/notes/create">Create note</a>
 		</div>
 	</div>
 </main>
 
-<?php require "partials/footer.php" ?>
+<?php require "views/partials/footer.php" ?>

@@ -27,4 +27,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	}
 }
 
-require "views/note_create.views.php";
+require "views/notes/create.views.php";
