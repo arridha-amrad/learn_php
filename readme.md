@@ -7,3 +7,7 @@ is a token that allows access to a constant, static property, or static method o
 
 How to avoid SQL Injection ?
 never inline your query with users input
+
+When to use static keyword?
+pure function (of a class) shoulb be static.
+pure funcrion means a function that not depend on any properties outside the function itself.

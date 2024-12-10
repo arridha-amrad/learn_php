@@ -3,6 +3,8 @@
 $heading = "Create Note";
 $title = "Create Note";
 
+require "Validator.php";
+
 $config = require "config.php";
 $db = new Database($config["database"]);
 
@@ -11,12 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$errors = [];
 	$body = $_POST["body"];
 
-	if (strlen($body) === 0) {
-		$errors["body"] = "description is required";
-	}
-
-	if (strlen($body) > 5) {
-		$errors["body"] = "description is too long";
+	if (!Validator::string($body, 1, 100)) {
+		$errors["body"] = "a description no more than 5 characters is required";
 	}
 
 	if (empty($errors)) {
@@ -24,6 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 			"body" => $body,
 			"user_id" => 1
 		]);
+
+		$body = "";
 	}
 }
 
