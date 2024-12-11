@@ -21,6 +21,10 @@ require base_path("views/partials/banner.php");
 			<button type="submit" class="text-red-500 font-semibold">Delete post</button>
 		</form>
 
+		<div class="py-6">
+			<a class="text-green-600 text-semibold" href="/notes/edit?post_id=<?=$note['id']?>">Edit</a>
+		</div>
+
 	</div>
 </main>
 

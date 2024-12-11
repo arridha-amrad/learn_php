@@ -31,7 +31,5 @@ $db->query("insert into notes(body, user_id) values(:body, :user_id)", [
   "user_id" => $curr_user_id,
 ]);
 
-$body = "";
-
 header("location: /notes");
 exit();
