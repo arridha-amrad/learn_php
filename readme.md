@@ -26,3 +26,6 @@ What is public folder
 Core folder
 
 - move any generic functionalities to core folder
+
+Database::class === Core\Database
+(resolving the namespace)

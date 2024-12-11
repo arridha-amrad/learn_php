@@ -1,11 +1,11 @@
 <?php
 
+use Core\App;
 use Core\Database;
 use Core\Response;
 
-$config = require base_path("config.php");
+$db = App::resolve(Database::class);
 
-$db = new Database($config["database"]);
 
 $post_id = $_POST["post_id"];
 $query_fetch = "select * from notes where id = :id";

@@ -20,6 +20,7 @@ function url_is($url)
 function abort($code = Response::NOT_FOUND)
 {
     http_response_code($code);
+
     require base_path("views/{$code}.php");
     die();
 }
