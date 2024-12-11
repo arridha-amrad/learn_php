@@ -1,7 +1,7 @@
 <?php
-require "views/partials/head.php";
-require "views/partials/nav.php";
-require "views/partials/banner.php";
+require base_path("views/partials/head.php");
+require base_path("views/partials/nav.php");
+require base_path("views/partials/banner.php");
 ?>
 
 <main>
@@ -10,8 +10,9 @@ require "views/partials/banner.php";
 		<form method="POST" class="mt-10 space-y-4">
 			<div class="flex flex-col gap-2">
 				<label class="font-semibold" for="body">Description</label>
-				<textarea rows="5" class="border border-slate-300 rounded p-4" name="body" id="body"><?= $body ?? '' ?></textarea>
-				<?php if (isset($errors["body"])) :  ?>
+				<textarea rows="5" class="border border-slate-300 rounded p-4" name="body"
+					id="body"><?= $body ?? '' ?></textarea>
+				<?php if (isset($errors["body"])): ?>
 					<p class="text-sm text-red-500">
 						<?= $errors["body"] ?>
 					</p>
@@ -23,4 +24,4 @@ require "views/partials/banner.php";
 	</div>
 </main>
 
-<?php require "views/partials/footer.php" ?>
+<?php require base_path("views/partials/footer.php") ?>

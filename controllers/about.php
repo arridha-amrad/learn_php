@@ -3,4 +3,7 @@
 $heading = "About Us";
 $title = "About";
 
-require "views/about.views.php";
+view("about.views.php", [
+  "heading" => "About Us",
+  "title" => "About",
+]);

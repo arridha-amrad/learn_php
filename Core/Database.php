@@ -1,6 +1,5 @@
 <?php
-// It's a convention in php
-//  A file with a class starting with a capital letter
+
 class Database
 {
     private $connection;
@@ -14,7 +13,7 @@ class Database
         // dsn = data source name
 
         $this->connection = new PDO($dsn, $user, $password, [
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         ]);
     }
 
@@ -34,7 +33,7 @@ class Database
     {
         $result = $this->find();
 
-        if (! $result) {
+        if (!$result) {
             abort(Response::NOT_FOUND);
         }
 

@@ -1,10 +1,6 @@
 <?php
 
-$heading = "Note";
-
-$title = "Note";
-
-$config = require "config.php";
+$config = require base_path("config.php");
 
 $db = new Database($config["database"]);
 $query = "select * from notes where id = :id";
@@ -17,4 +13,8 @@ $note = $db->query($query, ['id' => $post_id])->find_or_fail();
 
 authorize($note["user_id"] === $curr_user_id, Response::FORBIDDEN);
 
-require "views/notes/show.views.php";
+view("notes/show.views.php", [
+  "heading" => "Note",
+  "title" => "Note",
+  "note" => $note,
+]);
