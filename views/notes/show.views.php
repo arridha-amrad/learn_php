@@ -14,6 +14,13 @@ require base_path("views/partials/banner.php");
 				<?= htmlspecialchars($note["body"]) ?>
 			</h1>
 		</div>
+
+		<form class="py-6" method="POST">
+			<input type="text" hidden name="_method" value="DELETE">
+			<input type="text" hidden name="post_id" value="<?= $note["id"] ?>">
+			<button type="submit" class="text-red-500 font-semibold">Delete post</button>
+		</form>
+
 	</div>
 </main>
 

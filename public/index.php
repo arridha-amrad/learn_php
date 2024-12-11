@@ -13,4 +13,12 @@ spl_autoload_register(function ($class) {
   require base_path("{$result}.php");
 });
 
-require base_path("Core/router.php"); // router harus diletakkan terakhir
+$router = new Core\Router();
+
+require base_path("routes.php");
+
+$uri = parse_url($_SERVER["REQUEST_URI"])["path"];
+
+$method = $_POST["_method"] ?? $_SERVER["REQUEST_METHOD"];
+
+$router->route($uri, $method);
