@@ -12,7 +12,8 @@ require base_path("views/partials/banner.php");
 			<div class="flex flex-col gap-2">
 				<label class="font-semibold" for="body">Description</label>
 				<textarea rows="5" class="border border-slate-300 rounded p-4" name="body"
-					id="body"><?= $body ?? '' ?></textarea>
+					id="body"><?= $_POST["body"] ?? '' ?></textarea>
+
 				<?php if (isset($errors["body"])): ?>
 					<p class="text-sm text-red-500">
 						<?= $errors["body"] ?>

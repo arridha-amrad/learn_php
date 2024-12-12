@@ -23,6 +23,7 @@ $router->get("/notes/edit", "controllers/notes/edit.php");
 
 $router->get("/note", "controllers/notes/show.php");
 $router->delete("/note", "controllers/notes/destroy.php");
-
-
 $router->put("/note", "controllers/notes/update.php");
+
+$router->get("/register", "controllers/registration/create.php");
+$router->post("/register", "controllers/registration/store.php");
