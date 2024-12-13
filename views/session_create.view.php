@@ -16,7 +16,7 @@ require "partials/nav.php";
 
     <div class="flex flex-col gap-2">
       <label for="email">Email</label>
-      <input value="<?= $_POST["email"] ?? "" ?>" id="email" class="rounded border border-slate-300 py-2 px-4" type="text" name="email">
+      <input value="<?= old('email') ?>" id="email" class="rounded border border-slate-300 py-2 px-4" type="text" name="email">
       <?php if (isset($errors["email"])): ?>
         <p class="text-sm text-red-500">
           <?= $errors["email"] ?>

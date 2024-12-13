@@ -23,10 +23,8 @@ if ($form->validate($email, $password)) {
 
 Session::flash("errors", $form->errors());
 
+Session::flash("old", [
+    'email' => $email
+]);
+
 return redirect("/login");
-
-
-// return view("session_create.view.php", [
-//     "title" => "Login",
-//     "errors" => $form->errors()
-// ]);
