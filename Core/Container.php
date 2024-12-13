@@ -2,24 +2,24 @@
 
 namespace Core;
 
-class Container {
+class Container
+{
 
-  protected $bindings = [];
+	protected $bindings = [];
 
-  public function bind(string $key,  $function)
-  {
-    $this->bindings[$key] = $function;
-  }
+	public function bind(string $key,  $function)
+	{
+		$this->bindings[$key] = $function;
+	}
 
-  public function resolve(string $key)
-  {
-    if(!array_key_exists($key, $this->bindings)) {
-      throw new \Exception("No matching binding found for {$key}");
-    }
+	public function resolve(string $key)
+	{
+		if (!array_key_exists($key, $this->bindings)) {
+			throw new \Exception("No matching binding found for {$key}");
+		}
 
-    $resolver = $this->bindings[$key];
+		$resolver = $this->bindings[$key];
 
-    return call_user_func($resolver);
-  }
-
+		return call_user_func($resolver);
+	}
 }
