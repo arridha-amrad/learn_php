@@ -2,6 +2,7 @@
 
 
 use Core\Authenticator;
+use Core\Session;
 use Http\Forms\LoginForm;
 
 // get input
@@ -20,8 +21,12 @@ if ($form->validate($email, $password)) {
     $form->error('general', 'Invalid email and password');
 }
 
+Session::flash("errors", $form->errors());
 
-return view("session_create.view.php", [
-    "title" => "Login",
-    "errors" => $form->errors()
-]);
+return redirect("/login");
+
+
+// return view("session_create.view.php", [
+//     "title" => "Login",
+//     "errors" => $form->errors()
+// ]);
