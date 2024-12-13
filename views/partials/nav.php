@@ -10,7 +10,11 @@
             <a href="/" class="<?= url_is('/') ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium  hover:bg-gray-700 hover:text-white">Home</a>
             <a href="/about" class="<?= url_is('/about') ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
             <a href="/contact" class="<?= url_is('/contact') ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
-            <a href="/notes" class="<?= url_is('/notes') ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Notes</a>
+
+            <?php if ($_SESSION["user"] ?? false) : ?>
+              <a href="/notes" class="<?= url_is('/notes') ? "bg-gray-900 text-white" : "text-gray-300" ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Notes</a>
+            <?php endif; ?>
+
           </div>
         </div>
       </div>
@@ -27,11 +31,19 @@
           <!-- Profile dropdown -->
           <div class="relative ml-3">
             <div>
-
               <?php if ($_SESSION["user"] ?? false) : ?>
-                <h1 class="text-white font-semibold text-xl"><?= $_SESSION["user"]["name"] ?></h1>
+                <div class="flex items-center gap-4">
+                  <p class="text-white font-semibold text-xl"><?= $_SESSION["user"]["name"] ?></p>
+                  <form action="/session" method="POST">
+                    <input type="text" hidden name="_method" value="DELETE">
+                    <button class="px-4 py-2 bg-white text-black rounded">Logout</button>
+                  </form>
+                </div>
               <?php else: ?>
-                <a class="px-4 py-2 bg-blue-500 rounded" href="/register">Register</a>
+                <div class="flex gap-3">
+                  <a class="px-4 py-2 bg-blue-500 rounded" href="/register">Register</a>
+                  <a class="px-4 py-2 bg-white text-black rounded" href="/session">Login</a>
+                </div>
               <?php endif; ?>
 
             </div>
