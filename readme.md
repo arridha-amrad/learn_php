@@ -29,3 +29,5 @@ Core folder
 
 Database::class === Core\Database
 (resolving the namespace)
+
+The applications of our app stay in Http Directory

@@ -42,7 +42,7 @@
               <?php else: ?>
                 <div class="flex gap-3">
                   <a class="px-4 py-2 bg-blue-500 rounded" href="/register">Register</a>
-                  <a class="px-4 py-2 bg-white text-black rounded" href="/session">Login</a>
+                  <a class="px-4 py-2 bg-white text-black rounded" href="/login">Login</a>
                 </div>
               <?php endif; ?>
 
