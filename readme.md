@@ -38,7 +38,7 @@ example: ValidationException
 
 composer install will generate vendor folder with autoload.php
 
-to setup autoload
+How to setup autoload ?
 
 1. on composer.json, declare your namespaces
    "psr-4": {
@@ -46,3 +46,9 @@ to setup autoload
    "Http\\": "Http/"
    }
 2. on terminal: composer dump-autoload
+
+How to search composer packages?
+composer search <your intended package>
+
+to install it
+composer install <the package>
