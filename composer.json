@@ -1,0 +1,17 @@
+{
+  "name": "ari/learn_php",
+  "description": "My steps toward php guided by laracast",
+  "authors": [
+    {
+      "name": "Arridha Amrad",
+      "email": "arridhaamrad@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Core\\": "Core/",
+      "Http\\": "Http/"
+    }
+  }
+}

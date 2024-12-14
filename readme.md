@@ -35,3 +35,14 @@ The applications of our app stay in Http Directory
 In some cases:
 Instead of creating getter function we can use readonly for class properties.
 example: ValidationException
+
+composer install will generate vendor folder with autoload.php
+
+to setup autoload
+
+1. on composer.json, declare your namespaces
+   "psr-4": {
+   "Core\\": "Core/",
+   "Http\\": "Http/"
+   }
+2. on terminal: composer dump-autoload
