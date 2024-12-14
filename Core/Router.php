@@ -62,6 +62,7 @@ class Router
                 return require base_path("Http/controllers/{$route['controller']}");
             }
         }
+
         $this->abort();
     }
 
@@ -70,5 +71,10 @@ class Router
         http_response_code($code);
         require base_path("views/{$code}.php");
         die();
+    }
+
+    public function previous_uri()
+    {
+        return $_SERVER["HTTP_REFERER"];
     }
 }

@@ -31,3 +31,7 @@ Database::class === Core\Database
 (resolving the namespace)
 
 The applications of our app stay in Http Directory
+
+In some cases:
+Instead of creating getter function we can use readonly for class properties.
+example: ValidationException
